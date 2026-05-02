@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.PostProcessing;
+// Tambahkan baris ini untuk mengatasi ambiguitas:
+using MinAttribute = UnityEngine.PostProcessing.MinAttribute; 
 
 namespace UnityEditor.PostProcessing
 {
