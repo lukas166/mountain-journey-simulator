@@ -63,7 +63,8 @@
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(v.vertex);
-                o.texcoord = normalize(v.vertex.xyz);
+                float3 worldPos = mul(unity_ObjectToWorld, v.vertex).xyz;
+                o.texcoord = normalize(worldPos - _WorldSpaceCameraPos);
                 return o;
             }
 
