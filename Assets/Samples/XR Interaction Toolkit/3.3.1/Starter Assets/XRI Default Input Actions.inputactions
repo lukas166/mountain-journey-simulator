@@ -2069,6 +2069,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SpawnMenu",
+                    "type": "Button",
+                    "id": "e878e404-fa2a-43c4-b370-e5e46a4e3c28",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -2377,6 +2386,17 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "",
                     "action": "Translate Manipulation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "632ec917-24e4-43f8-afd1-a09ab3ea237b",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SpawnMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
