@@ -129,7 +129,7 @@ Material:
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SkyboxIntensity: 1.159
+    - _SkyboxIntensity: 0.87
     - _SkyboxRotation: 154
     - _SkyboxSaturation: 0.759
     - _Smoothness: 0.5
