@@ -11,8 +11,11 @@ public class RadialMenuTester : MonoBehaviour
     [Header("Masukkan UI Quest Window di sini")]
     public GameObject questWindow;
 
+    [Header("Masukkan UI Exit Confirm Window di sini")]
+    public GameObject exitConfirmWindow;
+
     [Header("Masukkan Objek Laser Kanan di sini")]
-    public GameObject rightHandLaser; // ✅ Variabel baru untuk mengontrol Laser
+    public GameObject rightHandLaser;
 
     private Material originalMaterial;
 
@@ -24,8 +27,8 @@ public class RadialMenuTester : MonoBehaviour
         }
 
         if (questWindow != null) questWindow.SetActive(false);
+        if (exitConfirmWindow != null) exitConfirmWindow.SetActive(false);
 
-        // ✅ Matikan laser saat game baru dimulai
         if (rightHandLaser != null) rightHandLaser.SetActive(false);
     }
 
@@ -40,20 +43,28 @@ public class RadialMenuTester : MonoBehaviour
         switch (menuIndex)
         {
             case 0:
-                targetColor = Color.red;
-                break;
-            case 1:
-                // ✅ LOGIKA BARU: Buka Jendela & Nyalakan Laser
-                changeTerrainColor = false;
-                if (questWindow != null) questWindow.SetActive(true);
+                targetColor = Color.gray;
+                if (exitConfirmWindow != null) exitConfirmWindow.SetActive(true);
+                if (questWindow != null) questWindow.SetActive(false);
                 if (rightHandLaser != null) rightHandLaser.SetActive(true);
                 break;
+
+            case 1:
+                targetColor = Color.magenta;
+
+                if (questWindow != null) questWindow.SetActive(true);
+                if (exitConfirmWindow != null) exitConfirmWindow.SetActive(false);
+                if (rightHandLaser != null) rightHandLaser.SetActive(true);
+                break;
+
             case 2:
                 targetColor = Color.yellow;
                 break;
+
             case 3:
                 targetColor = Color.magenta;
                 break;
+
             default:
                 targetColor = Color.gray;
                 break;
@@ -62,20 +73,42 @@ public class RadialMenuTester : MonoBehaviour
         if (changeTerrainColor)
         {
             testMaterial.color = targetColor;
-            if (testMaterial.HasProperty("_BaseColor")) testMaterial.SetColor("_BaseColor", targetColor);
+
+            if (testMaterial.HasProperty("_BaseColor"))
+            {
+                testMaterial.SetColor("_BaseColor", targetColor);
+            }
         }
     }
 
-    // ✅ FUNGSI BARU: Untuk dipanggil oleh Tombol "Ya, Saya Paham"
     public void TutupQuestWindow()
     {
-        if (questWindow != null) questWindow.SetActive(false); // Tutup jendela
-        if (rightHandLaser != null) rightHandLaser.SetActive(false); // Matikan laser
+        if (questWindow != null) questWindow.SetActive(false);
+        if (rightHandLaser != null) rightHandLaser.SetActive(false);
+
         Debug.Log("Quest Window ditutup, Laser dimatikan.");
+    }
+
+    public void TutupExitConfirmWindow()
+    {
+        if (exitConfirmWindow != null) exitConfirmWindow.SetActive(false);
+        if (rightHandLaser != null) rightHandLaser.SetActive(false);
+
+        Debug.Log("Exit Confirm Window ditutup, Laser dimatikan.");
+    }
+
+    public void KeluarGame()
+    {
+        Debug.Log("Game keluar.");
+
+        Application.Quit();
     }
 
     void OnDestroy()
     {
-        if (groundTerrain != null) groundTerrain.materialTemplate = originalMaterial;
+        if (groundTerrain != null)
+        {
+            groundTerrain.materialTemplate = originalMaterial;
+        }
     }
 }
