@@ -101,7 +101,13 @@ public class RadialMenuTester : MonoBehaviour
     {
         Debug.Log("Game keluar.");
 
-        Application.Quit();
+        #if UNITY_EDITOR
+            // Menghentikan mode Play di dalam Unity Editor
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            // Menutup aplikasi final (Build)
+            Application.Quit();
+        #endif
     }
 
     void OnDestroy()
