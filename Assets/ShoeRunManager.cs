@@ -40,11 +40,16 @@ public class ShoeRunManager : MonoBehaviour
     public float staminaNaikPerDetik = 0.75f;
     public float batasInputGerak = 0.1f;
 
+    [Header("Stamina Habis")]
+    public float batasStaminaBisaLariLagi = 2.5f;
+
     [Header("Efek Merah di Kamera")]
     public CanvasGroup staminaRedCircle;
     public float alphaMerahMaksimal = 0.35f;
 
     private float staminaSekarang;
+    private bool staminaHabis = false;
+
     private bool sepatuKiriDipakai = false;
     private bool sepatuKananDipakai = false;
 
@@ -116,6 +121,7 @@ public class ShoeRunManager : MonoBehaviour
     void Start()
     {
         staminaSekarang = staminaMaksimal;
+        staminaHabis = false;
 
         if (moveProvider != null)
         {
@@ -138,17 +144,7 @@ public class ShoeRunManager : MonoBehaviour
         bool memakaiSepatuLengkap = sepatuKiriDipakai && sepatuKananDipakai;
         bool sedangBergerak = CekPlayerBergerak();
 
-        if (memakaiSepatuLengkap && sedangBergerak)
-        {
-            staminaSekarang -= staminaTurunPerDetik * Time.deltaTime;
-        }
-        else
-        {
-            staminaSekarang += staminaNaikPerDetik * Time.deltaTime;
-        }
-
-        staminaSekarang = Mathf.Clamp(staminaSekarang, 0f, staminaMaksimal);
-
+        AturStamina(memakaiSepatuLengkap, sedangBergerak);
         AturKecepatan(memakaiSepatuLengkap);
         AturSuaraLangkah(memakaiSepatuLengkap, sedangBergerak);
         AturEfekMerah();
@@ -229,6 +225,30 @@ public class ShoeRunManager : MonoBehaviour
         return input.magnitude > batasInputGerak;
     }
 
+    private void AturStamina(bool memakaiSepatuLengkap, bool sedangBergerak)
+    {
+        if (memakaiSepatuLengkap && sedangBergerak && !staminaHabis)
+        {
+            staminaSekarang -= staminaTurunPerDetik * Time.deltaTime;
+        }
+        else
+        {
+            staminaSekarang += staminaNaikPerDetik * Time.deltaTime;
+        }
+
+        staminaSekarang = Mathf.Clamp(staminaSekarang, 0f, staminaMaksimal);
+
+        if (staminaSekarang <= 0f)
+        {
+            staminaHabis = true;
+        }
+
+        if (staminaHabis && staminaSekarang >= batasStaminaBisaLariLagi)
+        {
+            staminaHabis = false;
+        }
+    }
+
     private void AturKecepatan(bool memakaiSepatuLengkap)
     {
         if (moveProvider == null)
@@ -237,6 +257,12 @@ public class ShoeRunManager : MonoBehaviour
         }
 
         if (!memakaiSepatuLengkap)
+        {
+            moveProvider.moveSpeed = kecepatanJalan;
+            return;
+        }
+
+        if (staminaHabis)
         {
             moveProvider.moveSpeed = kecepatanJalan;
             return;
