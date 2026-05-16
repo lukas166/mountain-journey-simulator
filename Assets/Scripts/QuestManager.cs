@@ -8,7 +8,10 @@ public class QuestManager : MonoBehaviour
     // Fungsi ini bisa dipanggil saat event tertentu terjadi
     public void UpdateJudulQuest(string judulBaru)
     {
-        judulQuestText.text = judulBaru;
+        if (judulQuestText != null)
+        {
+            judulQuestText.text = judulBaru;
+        }
     }
 
     [ContextMenu("Test Update Teks")]

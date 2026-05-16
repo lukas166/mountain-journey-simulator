@@ -8,8 +8,12 @@ public class RadialMenuTester : MonoBehaviour
     [Header("Masukkan UI Exit Confirm Window di sini")]
     public GameObject exitConfirmWindow;
 
-    [Header("Masukkan Objek Laser Kanan di sini")]
     public GameObject rightHandLaser;
+
+    [Header("Masukkan Audio Source Ambient Hutan di sini")]
+    public AudioSource ambientAudioSource;
+
+    private bool ambientMuted = false;
 
     void Start()
     {
@@ -17,6 +21,12 @@ public class RadialMenuTester : MonoBehaviour
         if (exitConfirmWindow != null) exitConfirmWindow.SetActive(false);
 
         if (rightHandLaser != null) rightHandLaser.SetActive(false);
+
+        if (ambientAudioSource != null)
+        {
+            ambientAudioSource.mute = false;
+            ambientMuted = false;
+        }
     }
 
     public void ChangeGroundColor(int menuIndex)
@@ -36,6 +46,7 @@ public class RadialMenuTester : MonoBehaviour
                 break;
 
             case 2:
+                ToggleAmbientSound();
                 break;
 
             case 3:
@@ -43,6 +54,27 @@ public class RadialMenuTester : MonoBehaviour
 
             default:
                 break;
+        }
+    }
+
+    public void ToggleAmbientSound()
+    {
+        if (ambientAudioSource == null)
+        {
+            Debug.Log("Ambient Audio Source belum dimasukkan.");
+            return;
+        }
+
+        ambientMuted = !ambientMuted;
+        ambientAudioSource.mute = ambientMuted;
+
+        if (ambientMuted)
+        {
+            Debug.Log("Suara ambient dimatikan.");
+        }
+        else
+        {
+            Debug.Log("Suara ambient dinyalakan kembali.");
         }
     }
 
