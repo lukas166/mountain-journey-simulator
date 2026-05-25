@@ -1,22 +1,154 @@
 using UnityEngine;
-using TMPro; // Penting untuk TextMeshPro
+using TMPro;
+using UnityEngine.UI;
 
 public class QuestManager : MonoBehaviour
 {
-    public TextMeshProUGUI judulQuestText; // Tarik objek JudulQuest ke sini di Inspector
+    [Header("Text UI")]
+    public TextMeshProUGUI judulQuestText;
+    public TextMeshProUGUI pageNumberText;
 
-    // Fungsi ini bisa dipanggil saat event tertentu terjadi
-    public void UpdateJudulQuest(string judulBaru)
+    [Header("Button UI")]
+    public Button previousButton;
+    public Button nextButton;
+    public Button closeButton;
+
+    [Header("Quest Window")]
+    public GameObject questWindow;
+
+    [Header("Ray Interactor / Laser")]
+    public GameObject rightHandLaser;
+
+    [Header("Quest Default Saat Dibuka Dari Radial")]
+    [TextArea(3, 10)]
+    public string[] halamanDefaultQuest;
+
+    private string[] halamanQuest;
+    private int halamanAktif = 0;
+
+    public void UpdateQuestHalaman(string[] halamanBaru)
     {
+        halamanQuest = halamanBaru;
+        halamanAktif = 0;
+
+        MunculkanQuestWindow();
+    }
+
+    public void BukaQuestDariRadial()
+    {
+        halamanAktif = 0;
+
+        if (halamanQuest == null || halamanQuest.Length == 0)
+        {
+            if (halamanDefaultQuest != null && halamanDefaultQuest.Length > 0)
+            {
+                halamanQuest = halamanDefaultQuest;
+            }
+            else
+            {
+                halamanQuest = new string[]
+                {
+                    "Belum ada quest yang aktif."
+                };
+            }
+        }
+
+        MunculkanQuestWindow();
+    }
+
+    private void MunculkanQuestWindow()
+    {
+        if (questWindow != null)
+        {
+            questWindow.SetActive(true);
+        }
+
+        if (rightHandLaser != null)
+        {
+            rightHandLaser.SetActive(true);
+        }
+
+        TampilkanHalaman();
+    }
+
+    private void TampilkanHalaman()
+    {
+        if (halamanQuest == null || halamanQuest.Length == 0) return;
+
         if (judulQuestText != null)
         {
-            judulQuestText.text = judulBaru;
+            judulQuestText.text = halamanQuest[halamanAktif];
+        }
+
+        if (pageNumberText != null)
+        {
+            pageNumberText.text = (halamanAktif + 1) + " / " + halamanQuest.Length;
+        }
+
+        bool halamanPertama = halamanAktif == 0;
+        bool halamanTerakhir = halamanAktif >= halamanQuest.Length - 1;
+
+        if (previousButton != null)
+        {
+            previousButton.gameObject.SetActive(!halamanPertama);
+        }
+
+        if (nextButton != null)
+        {
+            nextButton.gameObject.SetActive(!halamanTerakhir);
+        }
+
+        if (closeButton != null)
+        {
+            closeButton.gameObject.SetActive(halamanTerakhir);
         }
     }
 
-    [ContextMenu("Test Update Teks")]
-    public void TestUpdate() 
+    public void HalamanBerikutnya()
     {
-        UpdateJudulQuest("Quest Berhasil Diubah!");
+        if (halamanQuest == null || halamanQuest.Length == 0) return;
+
+        if (halamanAktif < halamanQuest.Length - 1)
+        {
+            halamanAktif++;
+            TampilkanHalaman();
+        }
+    }
+
+    public void HalamanSebelumnya()
+    {
+        if (halamanQuest == null || halamanQuest.Length == 0) return;
+
+        if (halamanAktif > 0)
+        {
+            halamanAktif--;
+            TampilkanHalaman();
+        }
+    }
+
+    public void TutupQuestWindow()
+    {
+        if (questWindow != null)
+        {
+            questWindow.SetActive(false);
+        }
+
+        if (rightHandLaser != null)
+        {
+            rightHandLaser.SetActive(false);
+        }
+    }
+
+    [ContextMenu("Test Update Quest Halaman")]
+    public void TestUpdate()
+    {
+        string[] testHalaman = new string[]
+        {
+            "Halaman 1: Kamu baru saja memasuki area hutan.",
+            "Halaman 2: Perhatikan tanda-tanda di sekitar jalan.",
+            "Halaman 3: Lanjutkan perjalanan menuju basecamp."
+        };
+
+        UpdateQuestHalaman(testHalaman);
     }
 }

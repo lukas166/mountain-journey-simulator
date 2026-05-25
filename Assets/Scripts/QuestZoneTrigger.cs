@@ -2,9 +2,15 @@ using UnityEngine;
 
 public class QuestZoneTrigger : MonoBehaviour
 {
-    public QuestManager questManager; // Tarik skrip QuestManager ke sini
-    public string judulBaru = "Jelajahi Hutan Terlarang"; // Judul yang ingin ditampilkan
-    public bool hancurkanSetelahTrigger = true; // Agar trigger hanya sekali jalan
+    [Header("Quest Manager")]
+    public QuestManager questManager;
+
+    [Header("Isi Quest Per Halaman")]
+    [TextArea(3, 10)]
+    public string[] halamanQuest;
+
+    [Header("Pengaturan Trigger")]
+    public bool hancurkanSetelahTrigger = true;
 
     private bool sudahTrigger = false;
 
@@ -12,22 +18,20 @@ public class QuestZoneTrigger : MonoBehaviour
     {
         if (sudahTrigger) return;
 
-        // Hanya jalan jika yang menabrak adalah Player
         if (other.CompareTag("Player"))
         {
             sudahTrigger = true;
 
             if (questManager != null)
             {
-                questManager.UpdateJudulQuest(judulBaru);
+                questManager.UpdateQuestHalaman(halamanQuest);
             }
 
-            Debug.Log("Quest Updated via Trigger!");
+            Debug.Log("Quest muncul via Trigger!");
 
-            // Jika hanya ingin sekali seumur hidup quest ini muncul
             if (hancurkanSetelahTrigger)
             {
-                Destroy(gameObject); 
+                Destroy(gameObject);
             }
         }
     }
