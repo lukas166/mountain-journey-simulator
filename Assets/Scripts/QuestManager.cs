@@ -8,6 +8,9 @@ public class QuestManager : MonoBehaviour
     public TextMeshProUGUI judulQuestText;
     public TextMeshProUGUI pageNumberText;
 
+    [Header("Image UI")]
+    public Image questImage;
+
     [Header("Button UI")]
     public Button previousButton;
     public Button nextButton;
@@ -23,12 +26,26 @@ public class QuestManager : MonoBehaviour
     [TextArea(3, 10)]
     public string[] halamanDefaultQuest;
 
+    [Header("Gambar Default Quest")]
+    public Sprite[] gambarDefaultQuest;
+
     private string[] halamanQuest;
+    private Sprite[] gambarQuest;
     private int halamanAktif = 0;
 
     public void UpdateQuestHalaman(string[] halamanBaru)
     {
         halamanQuest = halamanBaru;
+        gambarQuest = null;
+        halamanAktif = 0;
+
+        MunculkanQuestWindow();
+    }
+
+    public void UpdateQuestHalaman(string[] halamanBaru, Sprite[] gambarBaru)
+    {
+        halamanQuest = halamanBaru;
+        gambarQuest = gambarBaru;
         halamanAktif = 0;
 
         MunculkanQuestWindow();
@@ -43,6 +60,7 @@ public class QuestManager : MonoBehaviour
             if (halamanDefaultQuest != null && halamanDefaultQuest.Length > 0)
             {
                 halamanQuest = halamanDefaultQuest;
+                gambarQuest = gambarDefaultQuest;
             }
             else
             {
@@ -50,6 +68,8 @@ public class QuestManager : MonoBehaviour
                 {
                     "Belum ada quest yang aktif."
                 };
+
+                gambarQuest = null;
             }
         }
 
@@ -83,6 +103,20 @@ public class QuestManager : MonoBehaviour
         if (pageNumberText != null)
         {
             pageNumberText.text = (halamanAktif + 1) + " / " + halamanQuest.Length;
+        }
+
+        if (questImage != null)
+        {
+            if (gambarQuest != null && halamanAktif < gambarQuest.Length && gambarQuest[halamanAktif] != null)
+            {
+                questImage.sprite = gambarQuest[halamanAktif];
+                questImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                questImage.sprite = null;
+                questImage.gameObject.SetActive(false);
+            }
         }
 
         bool halamanPertama = halamanAktif == 0;
@@ -149,6 +183,6 @@ public class QuestManager : MonoBehaviour
             "Halaman 3: Lanjutkan perjalanan menuju basecamp."
         };
 
-        UpdateQuestHalaman(testHalaman);
+        UpdateQuestHalaman(testHalaman, gambarDefaultQuest);
     }
 }

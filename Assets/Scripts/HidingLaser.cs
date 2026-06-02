@@ -5,6 +5,7 @@ public class HidingLaser : MonoBehaviour
 {
     public GameObject questWindow;
     public GameObject exitConfirmWindow;
+    public GameObject npcWindow;
 
     public XRInteractorLineVisual lineVisual;
     public LineRenderer lineRenderer;
@@ -13,8 +14,9 @@ public class HidingLaser : MonoBehaviour
     {
         bool questActive = questWindow != null && questWindow.activeSelf;
         bool exitActive = exitConfirmWindow != null && exitConfirmWindow.activeSelf;
+        bool npcActive = npcWindow != null && npcWindow.activeSelf;
 
-        bool shouldShowLaser = questActive || exitActive;
+        bool shouldShowLaser = questActive || exitActive || npcActive;
 
         if (lineVisual != null)
         {
