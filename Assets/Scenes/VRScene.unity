@@ -583,28 +583,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCZoneTrigger
   npcWindowManager: {fileID: 900677635}
   halamanNPC:
-  - '"Halo, Pendaki Hebat! Boleh istirahat sejenak di dekat sini. Coba letakkan tangan
-    di dadamu dan rasakan detak jantungmu setelah berjalan sejauh ini. Jantungmu
-    berdetak lebih cepat karena ia sedang berlatih menjadi lebih kuat, loh!"'
-  - '"Tahukah kamu? Menjaga tubuh tetap bergerak aktif, seperti mendaki atau sekadar
-    berjalan kaki, adalah hadiah terbaik untuk jantungmu. Ini adalah cara paling
-    ampuh dan murah agar kita terhindar dari masalah penyakit jantung atau pembuluh
-    darah di masa depan."
-
-'
-  - '"Merawat jantung itu sebenarnya sangat sederhana. Kamu hanya perlu menyempatkan
-    waktu 30 menit sehari untuk bergerak atau berjalan santai. Selain itu, cobalah
-    mulai mengurangi makanan yang terlalu manis, asin, atau berlemak, dan pastikan
-    tidurmu cukup."
-
-'
-  - '"Sayangilah jantungmu, karena dialah mesin kecil yang bekerja tanpa henti menemanimu
-    hidup setiap hari. Nah, sekarang tarik napas dalam-dalam, dan bersiaplah melanjutkan
-    perjalananmu. Semangat, kamu pasti bisa!"
-
-'
+  - Halo, Pendaki Hebat! Gimana nih, healing-nya? Seru, kan? Sekarang kamu berada
+    di Pos 1. Di sini kamu boleh istirahat sejenak. Sambil beristirahat, aku akan
+    berbagi sedikit informasi penting tentang kesehatan jantungmu.
+  - Tahukah kamu? Menjaga tubuh tetap aktif, seperti mendaki atau berjalan kaki,
+    adalah salah satu cara sederhana untuk merawat jantung. Tidak perlu mahal, yang
+    penting dilakukan secara rutin.
+  - Merawat jantung sebenarnya tidak sulit. Kamu cukup menyempatkan waktu sekitar
+    30 menit sehari untuk bergerak, berjalan santai, atau berolahraga ringan. Selain
+    itu, kurangi makanan yang terlalu manis, asin, dan berlemak, serta pastikan tidurmu
+    cukup.
+  - Ngomong-ngomong, sepatu lari yang kamu gunakan nanti bukan hanya membantu perjalananmu
+    di sini, tapi juga mengingatkan bahwa berlari secara rutin dapat membantu menjaga
+    kesehatan jantung dan membuat tubuh lebih bugar.
+  - Sayangilah jantungmu, karena jantung adalah mesin kecil yang terus bekerja tanpa
+    henti untuk menemanimu setiap hari. Sekarang, tarik napas dalam-dalam, lanjutkan
+    perjalananmu, dan tetap semangat. Kamu pasti bisa!
   gambarNPC:
   - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  barrierYangDihilangkan: {fileID: 971437050}
+  hilangkanBarrierSaatTrigger: 1
 --- !u!1 &51552778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1209,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6a7ffd29c0d0224db58f35763e811e5, type: 3}
+--- !u!1 &124875636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124875637}
+  - component: {fileID: 124875638}
+  m_Layer: 0
+  m_Name: basecamp (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124875637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124875636}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.67804825, z: -0, w: 0.73501736}
+  m_LocalPosition: {x: -1.65, y: 0.64, z: 1.15}
+  m_LocalScale: {x: -4.118986, y: 5.308234, z: 0.70832}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398884170}
+  m_LocalEulerAnglesHint: {x: 0, y: 85.383, z: 0}
+--- !u!65 &124875638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124875636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &125659961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &146816770
 Transform:
   m_ObjectHideFlags: 0
@@ -1671,6 +1722,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156896528}
   m_CullTransparentMesh: 1
+--- !u!1 &160429426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160429428}
+  - component: {fileID: 160429427}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &160429427
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160429426}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: a8c908ad98fb6414aa1fd00c6d8330c7, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.498
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &160429428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160429426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &177445892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,6 +3459,9 @@ Transform:
   - {fileID: 1928835360}
   - {fileID: 855427985}
   - {fileID: 1959248904}
+  - {fileID: 124875637}
+  - {fileID: 1882522581}
+  - {fileID: 1163559192}
   - {fileID: 354080454}
   - {fileID: 1331641476}
   - {fileID: 971437051}
@@ -4631,8 +4814,8 @@ Transform:
   m_GameObject: {fileID: 632883955}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.04085075, z: -0, w: 0.99916524}
-  m_LocalPosition: {x: -0.000000007348555, y: 0.49, z: -0.5670005}
-  m_LocalScale: {x: 2.8534606, y: 2.2526, z: -0.089556}
+  m_LocalPosition: {x: -0.000000007348555, y: -0.000000029121, z: -0.5670005}
+  m_LocalScale: {x: 2.8534606, y: 0.7095465, z: -0.089556}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 746525008}
@@ -5060,7 +5243,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.12015495, z: -0, w: 0.9927552}
   m_LocalPosition: {x: -1.54, y: 2.1, z: 82.26}
-  m_LocalScale: {x: 18.249908, y: 7.4941187, z: 1}
+  m_LocalScale: {x: 18.249908, y: 48.171444, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 632883956}
@@ -7167,6 +7350,91 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028044363}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1074575911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1074575914}
+  - component: {fileID: 1074575913}
+  - component: {fileID: 1074575912}
+  m_Layer: 0
+  m_Name: QuestTriggerPuncak
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1074575912
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074575911}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1074575913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074575911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391a8e9c877e3f4080e6c52971b67dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
+  questManager: {fileID: 1726363788}
+  halamanQuest:
+  - 'SELAMAT! Anda berhasil mencapai puncak gunung!
+
+
+    Perjalanan panjang akhirnya
+    terbayar. Tarik napas dalam-dalam dan nikmati momen kemenangan ini, Pendaki Hebat!'
+  - 'Tapi tunggu dulu... ada kejutan indah menanti.
+
+
+    Coba hadapkan tubuh Anda
+    ke belakang secara perlahan. Terimakasih sudah bermain!'
+  gambarQuest: []
+  cubeVisualBarrier: {fileID: 0}
+  matikanCubeVisualDiAwal: 1
+  aktifkanCubeVisualSaatTrigger: 1
+  barrierParentUntukDihilangkan: {fileID: 1331641475}
+  hilangkanBarrierSaatTrigger: 1
+  hancurkanSetelahTrigger: 1
+--- !u!4 &1074575914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074575911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.5735764, z: 0, w: 0.8191521}
+  m_LocalPosition: {x: -12.91, y: 80.8, z: 500.1}
+  m_LocalScale: {x: 16.239511, y: 162.39513, z: 491.52127}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 70, z: 0}
 --- !u!1 &1116822927
 GameObject:
   m_ObjectHideFlags: 0
@@ -7612,6 +7880,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161958167}
   m_CullTransparentMesh: 1
+--- !u!1 &1163559191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163559192}
+  - component: {fileID: 1163559193}
+  m_Layer: 0
+  m_Name: basecamp (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163559192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163559191}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7449019, z: -0, w: 0.66717404}
+  m_LocalPosition: {x: -6.865, y: 0.6399999, z: 21.915}
+  m_LocalScale: {x: -2.7650342, y: 5.308234, z: 0.70832}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398884170}
+  m_LocalEulerAnglesHint: {x: 0, y: 96.301, z: 0}
+--- !u!65 &1163559193
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163559191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1194680272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7792,18 +8113,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - 'SELAMAT! Anda mendapatkan headphone.
+  - 'SELAMAT! Anda berhasil mendapatkan item headphone.
 
-    Putar musiknya dan tarik napas dalam-dalam.
-    Suara menenangkan dari alat ini akan mengusir rasa cemas dan membuat pikiran
-    anda jauh lebih rileks selama mendaki.
+    Headphone ini dapat
+    membantu membuat suasana pendakian menjadi lebih tenang. Simak tutorial berikut
+    untuk penggunaan headphone.'
+  - '1. Ambil headphone menggunakan grip.
 
-'
+    2. Arahkan headphone ke area kepala.'
+  - '1. Lepaskan grip saat headphone sudah berada di dekat area kepala.
+
+    2. Headphone
+    akan terpasang, lalu musik akan menyala secara otomatis.'
+  - 'Untuk menjeda atau melanjutkan musik, arahkan tangan ke area kepala, lalu tekan
+    tombol trigger.
+
+    Tekan trigger lagi jika ingin memutar musik kembali.'
+  - 'Untuk melepas headphone, arahkan tangan ke area kepala, lalu gunakan grip untuk
+    mengambil headphone.
+
+    Setelah itu, arahkan headphone menjauh dari kepala
+    atau ke luar area kepala.'
+  - 'Gunakan headphone ini untuk membuat perjalananmu lebih santai.
+
+    Jika sudah
+    siap, lanjutkan perjalanan menuju pos berikutnya.'
   gambarQuest: []
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
-  barrierParentUntukDihilangkan: {fileID: 0}
+  barrierParentUntukDihilangkan: {fileID: 1655249728}
   hilangkanBarrierSaatTrigger: 0
   hancurkanSetelahTrigger: 1
 --- !u!4 &1223861825
@@ -7815,8 +8154,8 @@ Transform:
   m_GameObject: {fileID: 1223861822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -71.57, y: 29.2, z: 172.14}
-  m_LocalScale: {x: 1, y: 10, z: 30}
+  m_LocalPosition: {x: -70.04, y: 29.2, z: 172.215}
+  m_LocalScale: {x: 1, y: 10, z: 37.827}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -10377,17 +10716,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - 'SELAMAT ! Anda mendapatkan sepatu
+  - 'SELAMAT! Anda berhasil mendapatkan item sepatu.
 
-    Langkahmu kini terasa lebih ringan! Sepatu
-    ini memberi anda tenaga ekstra untuk berjalan dan berlari jauh lebih cepat
+    Langkahmu kini terasa lebih
+    ringan! Sepatu ini memberi anda tenaga ekstra untuk berjalan dan berlari. jauh
+    lebih cepat. Simak tutorial berikut untuk penggunaan sepatu.
 
 '
+  - '1. Ambil sepatu kiri dengan tangan kiri menggunakan grip.
+
+    2. Ambil sepatu
+    kanan dengan tangan kanan menggunakan grip.'
+  - '1. Arahkan sepatu yang sedang dipegang ke area kakimu.
+
+    2. Anda akan melihat
+    placeholder sepatu berwarna biru.
+
+    3. Lepaskan sepatu anda di placeholder
+    tersebut.
+
+    Pakaikan sepatu di kaki yang tepat (sepatu kanan di kaki kanan
+    dan sebaliknya)'
+  - '1. Untuk melepas sepatu, arahkan tangan ke area kaki, lalu gunakan grip pada
+    sepatu yang ingin dilepas.
+
+    2. Setelah sepatu terambil, arahkan tangan menjauh
+    dari kaki atau ke luar area kaki, lalu lepaskan grip.'
+  - 'Tekan tombol X sekali untuk mengaktifkan mode lari.
+
+    Silakan mencoba dan
+    silahkan lanjut ke area pos 1.'
   gambarQuest: []
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
-  barrierParentUntukDihilangkan: {fileID: 1331641475}
+  barrierParentUntukDihilangkan: {fileID: 1655249728}
   hilangkanBarrierSaatTrigger: 1
   hancurkanSetelahTrigger: 1
 --- !u!4 &1466241832
@@ -11264,6 +11627,86 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1593856778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1593856781}
+  - component: {fileID: 1593856780}
+  - component: {fileID: 1593856779}
+  m_Layer: 0
+  m_Name: QuestTriggerPos2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1593856779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593856778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391a8e9c877e3f4080e6c52971b67dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
+  questManager: {fileID: 1726363788}
+  halamanQuest:
+  - 'Selamat! Anda tiba di Pos 2.
+
+    Untuk melanjutkan perjalanan kembali, Anda
+    harus berbincang dengan Pemandu di pos istirahat yang ada di depan Anda. Semangat,
+    sedikit lagi anda akan mencapai puncak gunung!'
+  gambarQuest: []
+  cubeVisualBarrier: {fileID: 632883955}
+  matikanCubeVisualDiAwal: 1
+  aktifkanCubeVisualSaatTrigger: 1
+  barrierParentUntukDihilangkan: {fileID: 0}
+  hilangkanBarrierSaatTrigger: 0
+  hancurkanSetelahTrigger: 1
+--- !u!65 &1593856780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593856778}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1593856781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593856778}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.18918519, z: -0, w: 0.98194146}
+  m_LocalPosition: {x: 70.61, y: 33.387, z: 254.37}
+  m_LocalScale: {x: 5.4452, y: 17.526, z: 121.91626}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -21.81, z: 0}
 --- !u!1 &1622199874
 GameObject:
   m_ObjectHideFlags: 0
@@ -12044,26 +12487,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - Halo, selamat datang di pendakian virtualmu! Anggap saja ini waktu santaimu untuk
-    melepas penat dan menikmati alam. Tujuan akhir perjalanan kita adalah mencapai
-    puncak gunung. Kamu bisa berjalan santai menggunakan pengendali (controller)
-    di tanganmu. Kalau ingin lebih cepat, kamu boleh berlari, tapi ingat staminamu
-    akan perlahan habis. Jika sudah lelah, kamu harus kembali berjalan pelan sejenak
-    untuk memulihkan tenaga. Nikmati saja perjalanannya tanpa perlu terburu-buru!
-  - Ikuti terus petunjuk dari jendela misi di layarmu. Selama berjalan, tugasmu adalah
-    menemukan sepatu agar kamu bisa berlari lebih nyaman, serta Headset musik untuk
-    menenangkan pikiranmu dari rasa cemas. Sempatkanlah beristirahat saat tiba di
-    Pos 1 dan Pos 2. Di sana, seorang pemandu ramah sudah menunggumu untuk membagikan
-    tips sederhana tentang cara menjaga kesehatan jantung serta merawat kesehatan
-    mental anda.
-  - Tepat sebelum kamu benar-benar sampai di puncak, ada satu gerbang terakhir yang
-    menunggumu. Jangan tegang, kamu hanya perlu menjawab beberapa pertanyaan kuis
-    ringan dari cerita kesehatan yang baru saja kamu dengar di pos sebelumnya. Kalau
-    jawabanmu salah, tidak akan ada hukuman. Kamu bebas mencoba lagi sampai gerbangnya
-    terbuka. Begitu berhasil, hadiah pemandangan yang luar biasa indah di puncak
-    gunung siap menyambutmu. Selamat mendaki!
+  - Halo, selamat datang di pendakian virtualmu! Ini adalah Quest Window yang akan
+    memandu perjalananmu. Anggap saja ini waktu santaimu untuk melepas penat dan
+    menikmati alam. Tujuan akhir perjalanan kita adalah mencapai puncak gunung. Yuk
+    simak tutorial penggunaan Controller berikut ini!
+  - 'Joystick Kiri - Berjalan
+
+    Joystick Kanan - Putar Kanan / Kiri
+
+    Tombol
+    A - Melompat'
+  - 'Trigger - Mengkonfirmasi pilihan (klik)
+
+    Grip - Mengambil objek'
+  - 'Tombol B - Membuka Radial Menu
+
+    Tab Volume - Mute / Unmute Suara
+
+    Tab
+    Panel  - Untuk Mengaktifkan Quest Wiindow
+
+    Tab Exit - Kembali ke Main Menu'
   gambarQuest:
-  - {fileID: 21300000, guid: 1046ac58d370fb64bafad35c16ce9784, type: 3}
+  - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  - {fileID: 21300000, guid: f711dc313b41ce544ae4c920365ab184, type: 3}
+  - {fileID: 21300000, guid: 8580442321580c34a8f3ab0875d9c77e, type: 3}
+  - {fileID: 21300000, guid: 8580442321580c34a8f3ab0875d9c77e, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -12230,7 +12679,7 @@ GameObject:
   - component: {fileID: 1723467334}
   - component: {fileID: 1723467333}
   m_Layer: 0
-  m_Name: QuestTriggerAreaKuis
+  m_Name: QuestTriggerAreaPuncak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12250,11 +12699,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - 'Oops!
+  - 'Wah, puncak gunung sudah hampir sampai!
 
-    Gerbang di depan terkunci!
+    Perjalananmu tinggal sedikit lagi.
+    Di depan sana ada tanjakan terakhir yang cukup tinggi sebelum kamu benar-benar
+    mencapai puncak.'
+  - 'Untuk melewati tanjakan ini, kamu perlu melompat secara terus-menerus.
 
-    Jawab kuis dahulu!'
+    Tekan
+    tombol A berulang kali agar kamu bisa terus melompat ke atas.'
+  - Puncak sudah di depan mata. Kamu pasti bisa mencapainya!
   gambarQuest: []
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
@@ -12333,7 +12787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestManager
   judulQuestText: {fileID: 870925804}
   pageNumberText: {fileID: 0}
-  questImage: {fileID: 0}
+  questImage: {fileID: 2046208407}
   previousButton: {fileID: 51552780}
   nextButton: {fileID: 88825549}
   closeButton: {fileID: 1123659934}
@@ -12354,8 +12808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestWindowFollowHead
   headTransform: {fileID: 1989161794}
-  distance: 3
-  downwardOffset: 0.1
+  distance: 1.8
+  downwardOffset: 0.3
   followSpeed: 20
 --- !u!114 &1726363790
 MonoBehaviour:
@@ -12562,7 +13016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1750627190
 Transform:
   m_ObjectHideFlags: 0
@@ -12953,7 +13407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestWindowFollowHead
   headTransform: {fileID: 1989161794}
   distance: 10
-  downwardOffset: -3
+  downwardOffset: -1
   followSpeed: 20
 --- !u!114 &1783563598
 MonoBehaviour:
@@ -13129,12 +13583,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - 'Anda tiba di persimpangan jalan.
+  - 'Barrier aktif! Anda tiba di persimpangan jalan.
 
-    Untuk membuka area pos, anda harus mencari
-    barang terlebih dahulu.
-
-    Silakan ambil jalur quest.'
+    Untuk membuka area pos,
+    anda harus mencari item quest terlebih dahulu Silakan ambil jalur quest.'
   gambarQuest: []
   cubeVisualBarrier: {fileID: 146816769}
   matikanCubeVisualDiAwal: 1
@@ -13210,14 +13662,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
   questManager: {fileID: 1726363788}
   halamanQuest:
-  - 'Anda tiba di persimpangan jalan lagi!
+  - 'Barrier aktif! Anda tiba di persimpangan jalan lagi!
 
-    Untuk membuka area pos, anda harus
-    mencari barang terlebih dahulu.
-
-    Silakan ambil jalur quest.'
+    Untuk membuka area
+    pos berikutnya, anda harus mencari item quest lagi nih. Silakan ambil jalur quest
+    lagi!'
   gambarQuest: []
-  cubeVisualBarrier: {fileID: 0}
+  cubeVisualBarrier: {fileID: 1717867575}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
   barrierParentUntukDihilangkan: {fileID: 0}
@@ -13252,13 +13703,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833925816}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: 11.89, y: 29.43, z: 144.74}
-  m_LocalScale: {x: 1, y: 10, z: 30}
+  m_LocalRotation: {x: -0, y: 0.5455829, z: -0, w: 0.8380569}
+  m_LocalPosition: {x: 11.89, y: 29.43, z: 140.71}
+  m_LocalScale: {x: 1, y: 10, z: 110.4046}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 66.129, z: 0}
 --- !u!4 &1853874533 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7798619951894513579, guid: e28b28dd30a7c70458a6ae8e5a1db930, type: 3}
@@ -13316,6 +13767,59 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1882522580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1882522581}
+  - component: {fileID: 1882522582}
+  m_Layer: 0
+  m_Name: basecamp (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1882522581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882522580}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.4097524, z: -0, w: 0.9121968}
+  m_LocalPosition: {x: -4.964, y: 0.6399999, z: 13.418}
+  m_LocalScale: {x: -1.424352, y: 5.308234, z: 0.70832}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 398884170}
+  m_LocalEulerAnglesHint: {x: 0, y: 48.379, z: 0}
+--- !u!65 &1882522582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882522580}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1900826173
 PrefabInstance:
@@ -13855,8 +14359,8 @@ MonoBehaviour:
   angleBetweenPart: 10
   handTransform: {fileID: 524904847}
   headTransform: {fileID: 1989161794}
-  spawnDistance: 2
-  downwardOffset: 0
+  spawnDistance: 1.8
+  downwardOffset: 0.1
   followSpeed: 12
   menuIcons:
   - {fileID: 21300000, guid: b82c41d3a4126d5449c3168afe5f657c, type: 3}
@@ -15045,6 +15549,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046208405}
   m_CullTransparentMesh: 1
+--- !u!1 &2090610397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090610400}
+  - component: {fileID: 2090610399}
+  - component: {fileID: 2090610398}
+  m_Layer: 0
+  m_Name: QuestTriggerPos1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2090610398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090610397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a391a8e9c877e3f4080e6c52971b67dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestZoneTrigger
+  questManager: {fileID: 1726363788}
+  halamanQuest:
+  - 'Selamat! Anda tiba di pos 1.
+
+    Untuk melanjutkan perjalanan, anda harus berbincang
+    dengan Pemandu pada pos perkemahan di depan anda.'
+  gambarQuest: []
+  cubeVisualBarrier: {fileID: 1028044363}
+  matikanCubeVisualDiAwal: 1
+  aktifkanCubeVisualSaatTrigger: 1
+  barrierParentUntukDihilangkan: {fileID: 0}
+  hilangkanBarrierSaatTrigger: 0
+  hancurkanSetelahTrigger: 1
+--- !u!65 &2090610399
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090610397}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2090610400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090610397}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.30049494, z: -0, w: 0.9537834}
+  m_LocalPosition: {x: -12.07, y: 8.19, z: -13.77}
+  m_LocalScale: {x: 5.4452, y: 10, z: 48.255}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 34.975, z: 0}
 --- !u!1 &2092508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -15198,28 +15781,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCZoneTrigger
   npcWindowManager: {fileID: 24427849}
   halamanNPC:
-  - '"Halo, Pendaki Hebat! Boleh istirahat sejenak di dekat sini. Coba letakkan tangan
-    di dadamu dan rasakan detak jantungmu setelah berjalan sejauh ini. Jantungmu
-    berdetak lebih cepat karena ia sedang berlatih menjadi lebih kuat, loh!"'
-  - '"Tahukah kamu? Menjaga tubuh tetap bergerak aktif, seperti mendaki atau sekadar
-    berjalan kaki, adalah hadiah terbaik untuk jantungmu. Ini adalah cara paling
-    ampuh dan murah agar kita terhindar dari masalah penyakit jantung atau pembuluh
-    darah di masa depan."
-
-'
-  - '"Merawat jantung itu sebenarnya sangat sederhana. Kamu hanya perlu menyempatkan
-    waktu 30 menit sehari untuk bergerak atau berjalan santai. Selain itu, cobalah
-    mulai mengurangi makanan yang terlalu manis, asin, atau berlemak, dan pastikan
-    tidurmu cukup."
-
-'
-  - '"Sayangilah jantungmu, karena dialah mesin kecil yang bekerja tanpa henti menemanimu
-    hidup setiap hari. Nah, sekarang tarik napas dalam-dalam, dan bersiaplah melanjutkan
-    perjalananmu. Semangat, kamu pasti bisa!"
-
-'
+  - Halo, Pendaki Hebat! Kita ketemu lagi nih. Selamat datang di Pos 2! Wah, perjalananmu
+    sudah semakin jauh, ya. Bertahan sejauh ini tentu bukan hal mudah. Setelah memakai
+    headphone tadi, apakah pikiranmu terasa sedikit lebih tenang?
+  - Terkadang, beban yang paling berat bukan hanya jalanan yang menanjak, tetapi
+    juga pikiran kita sendiri. Rasa cemas, stres, atau terlalu banyak memikirkan
+    masalah bisa membuat hati dan pikiran terasa lelah. Jadi, tidak apa-apa untuk
+    berhenti sejenak dan mengambil napas.
+  - Sama seperti tubuh yang butuh istirahat setelah berjalan jauh, pikiranmu juga
+    perlu diberi ruang untuk tenang. Dengarkan musik yang menenangkan dari headset
+    yang kamu temukan tadi, dan jangan ragu untuk bercerita kepada orang yang kamu
+    percaya. Kamu tidak harus memikul semuanya sendirian.
+  - Merawat ketenangan pikiran sama pentingnya dengan menjaga kesehatan tubuh. Jadi,
+    jangan lupa untuk berbaik hati pada dirimu sendiri, ya. Sekarang, tarik napas
+    perlahan, tenangkan pikiranmu, dan bersiaplah melanjutkan perjalanan. Puncak
+    sudah semakin dekat, semangatt!
   gambarNPC:
   - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  barrierYangDihilangkan: {fileID: 746525007}
+  hilangkanBarrierSaatTrigger: 1
 --- !u!135 &2110879539
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -15533,6 +16113,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 160429428}
   - {fileID: 943185700}
   - {fileID: 1925281271}
   - {fileID: 731841236}
@@ -15552,9 +16133,12 @@ SceneRoots:
   - {fileID: 1716998887}
   - {fileID: 1823679346}
   - {fileID: 1466241832}
+  - {fileID: 2090610400}
   - {fileID: 1833925819}
   - {fileID: 1223861825}
+  - {fileID: 1593856781}
   - {fileID: 1723467335}
+  - {fileID: 1074575914}
   - {fileID: 1726363793}
   - {fileID: 1783563601}
   - {fileID: 1926886683}

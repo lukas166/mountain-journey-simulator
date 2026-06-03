@@ -12,6 +12,10 @@ public class NPCZoneTrigger : MonoBehaviour
     [Header("Gambar NPC Per Halaman")]
     public Sprite[] gambarNPC;
 
+    [Header("Barrier Yang Dihilangkan")]
+    public GameObject barrierYangDihilangkan;
+    public bool hilangkanBarrierSaatTrigger = true;
+
     private bool dataSudahDikirim = false;
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +31,11 @@ public class NPCZoneTrigger : MonoBehaviour
                 }
 
                 npcWindowManager.MasukAreaNPC();
+            }
+
+            if (barrierYangDihilangkan != null && hilangkanBarrierSaatTrigger)
+            {
+                barrierYangDihilangkan.SetActive(false);
             }
 
             Debug.Log("Player masuk area NPC.");
