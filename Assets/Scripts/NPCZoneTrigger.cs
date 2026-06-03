@@ -12,30 +12,37 @@ public class NPCZoneTrigger : MonoBehaviour
     [Header("Gambar NPC Per Halaman")]
     public Sprite[] gambarNPC;
 
-    [Header("Pengaturan Trigger")]
-    public bool hancurkanSetelahTrigger = true;
-
-    private bool sudahTrigger = false;
+    private bool dataSudahDikirim = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (sudahTrigger) return;
-
         if (other.CompareTag("Player"))
         {
-            sudahTrigger = true;
-
             if (npcWindowManager != null)
             {
-                npcWindowManager.UpdateNPCHalaman(halamanNPC, gambarNPC);
+                if (!dataSudahDikirim)
+                {
+                    npcWindowManager.SetNPCHalaman(halamanNPC, gambarNPC);
+                    dataSudahDikirim = true;
+                }
+
+                npcWindowManager.MasukAreaNPC();
             }
 
-            Debug.Log("NPC Window muncul via Trigger!");
+            Debug.Log("Player masuk area NPC.");
+        }
+    }
 
-            if (hancurkanSetelahTrigger)
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (npcWindowManager != null)
             {
-                Destroy(gameObject);
+                npcWindowManager.KeluarAreaNPC();
             }
+
+            Debug.Log("Player keluar area NPC.");
         }
     }
 }

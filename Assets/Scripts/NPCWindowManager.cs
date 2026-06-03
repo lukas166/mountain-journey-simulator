@@ -15,12 +15,17 @@ public class NPCWindowManager : MonoBehaviour
     public Button previousButton;
     public Button nextButton;
     public Button closeButton;
+    public Button openAgainButton;
 
-    [Header("NPC Window")]
+    [Header("NPC Window dan Panel")]
     public GameObject npcWindow;
+    public GameObject npcPanel;
 
-    [Header("Ray Interactor / Laser")]
-    public GameObject rightHandLaser;
+    [Header("Animator NPC")]
+    public Animator npcAnimator;
+    public string idleAnimationStateName = "Idle";
+    public string talkingAnimationStateName = "Talking";
+    public float transitionDuration = 0.15f;
 
     [Header("NPC Default")]
     [TextArea(3, 10)]
@@ -32,6 +37,13 @@ public class NPCWindowManager : MonoBehaviour
     private string[] halamanNPC;
     private Sprite[] gambarNPC;
     private int halamanAktif = 0;
+
+    private bool dataSudahDiisi = false;
+    private bool sedangDiArea = false;
+
+    private int halamanTersimpanSaatKeluar = 0;
+    private bool panelTerbukaSaatKeluar = true;
+    private bool sudahPernahKeluarArea = false;
 
     private void Start()
     {
@@ -49,69 +61,219 @@ public class NPCWindowManager : MonoBehaviour
 
         if (closeButton != null)
         {
-            closeButton.onClick.RemoveListener(TutupNPCWindow);
-            closeButton.onClick.AddListener(TutupNPCWindow);
+            closeButton.onClick.RemoveListener(TutupNPCPanel);
+            closeButton.onClick.AddListener(TutupNPCPanel);
+            closeButton.gameObject.SetActive(false);
+        }
+
+        if (openAgainButton != null)
+        {
+            openAgainButton.onClick.RemoveListener(BukaKembaliNPCPanel);
+            openAgainButton.onClick.AddListener(BukaKembaliNPCPanel);
+            openAgainButton.gameObject.SetActive(false);
+        }
+
+        if (npcPanel != null)
+        {
+            npcPanel.SetActive(false);
         }
 
         if (npcWindow != null)
         {
             npcWindow.SetActive(false);
         }
+
+        GantiAnimasiNPC(idleAnimationStateName);
     }
 
-    public void UpdateNPCHalaman(string[] halamanBaru)
-    {
-        halamanNPC = halamanBaru;
-        gambarNPC = null;
-        halamanAktif = 0;
-
-        MunculkanNPCWindow();
-    }
-
-    public void UpdateNPCHalaman(string[] halamanBaru, Sprite[] gambarBaru)
+    public void SetNPCHalaman(string[] halamanBaru, Sprite[] gambarBaru)
     {
         halamanNPC = halamanBaru;
         gambarNPC = gambarBaru;
-        halamanAktif = 0;
+        dataSudahDiisi = true;
 
-        MunculkanNPCWindow();
+        if (halamanNPC == null || halamanNPC.Length == 0)
+        {
+            halamanAktif = 0;
+            halamanTersimpanSaatKeluar = 0;
+            return;
+        }
+
+        if (halamanAktif >= halamanNPC.Length)
+        {
+            halamanAktif = halamanNPC.Length - 1;
+        }
+
+        if (halamanAktif < 0)
+        {
+            halamanAktif = 0;
+        }
     }
 
-    private void MunculkanNPCWindow()
+    public void MasukAreaNPC()
     {
+        sedangDiArea = true;
+
+        if (!dataSudahDiisi)
+        {
+            halamanNPC = halamanDefaultNPC;
+            gambarNPC = gambarDefaultNPC;
+            dataSudahDiisi = true;
+        }
+
         if (npcWindow != null)
         {
             npcWindow.SetActive(true);
         }
 
-        if (rightHandLaser != null)
+        if (sudahPernahKeluarArea)
         {
-            rightHandLaser.SetActive(true);
+            halamanAktif = halamanTersimpanSaatKeluar;
+
+            if (panelTerbukaSaatKeluar)
+            {
+                BukaNPCPanelTanpaResetHalaman();
+            }
+            else
+            {
+                TampilkanTombolBukaSaja();
+            }
+        }
+        else
+        {
+            halamanAktif = 0;
+            BukaNPCPanelTanpaResetHalaman();
+        }
+    }
+
+    public void KeluarAreaNPC()
+    {
+        sedangDiArea = false;
+
+        halamanTersimpanSaatKeluar = halamanAktif;
+
+        if (npcPanel != null && npcPanel.activeSelf)
+        {
+            panelTerbukaSaatKeluar = true;
+        }
+        else
+        {
+            panelTerbukaSaatKeluar = false;
         }
 
+        sudahPernahKeluarArea = true;
+
+        if (npcPanel != null)
+        {
+            npcPanel.SetActive(false);
+        }
+
+        if (openAgainButton != null)
+        {
+            openAgainButton.gameObject.SetActive(false);
+        }
+
+        if (npcWindow != null)
+        {
+            npcWindow.SetActive(false);
+        }
+
+        GantiAnimasiNPC(idleAnimationStateName);
+    }
+
+    private void BukaNPCPanelTanpaResetHalaman()
+    {
+        if (!sedangDiArea) return;
+
+        if (npcWindow != null)
+        {
+            npcWindow.SetActive(true);
+        }
+
+        if (npcPanel != null)
+        {
+            npcPanel.SetActive(true);
+        }
+
+        if (openAgainButton != null)
+        {
+            openAgainButton.gameObject.SetActive(false);
+        }
+
+        GantiAnimasiNPC(talkingAnimationStateName);
+
         TampilkanHalaman();
+    }
+
+    public void BukaKembaliNPCPanel()
+    {
+        if (!sedangDiArea) return;
+
+        halamanAktif = 0;
+
+        BukaNPCPanelTanpaResetHalaman();
+    }
+
+    public void TutupNPCPanel()
+    {
+        if (!sedangDiArea) return;
+
+        if (npcPanel != null)
+        {
+            npcPanel.SetActive(false);
+        }
+
+        if (openAgainButton != null)
+        {
+            openAgainButton.gameObject.SetActive(true);
+        }
+
+        GantiAnimasiNPC(idleAnimationStateName);
+    }
+
+    private void TampilkanTombolBukaSaja()
+    {
+        if (!sedangDiArea) return;
+
+        if (npcWindow != null)
+        {
+            npcWindow.SetActive(true);
+        }
+
+        if (npcPanel != null)
+        {
+            npcPanel.SetActive(false);
+        }
+
+        if (openAgainButton != null)
+        {
+            openAgainButton.gameObject.SetActive(true);
+        }
+
+        GantiAnimasiNPC(idleAnimationStateName);
     }
 
     private void TampilkanHalaman()
     {
         if (halamanNPC == null || halamanNPC.Length == 0)
         {
-            if (halamanDefaultNPC != null && halamanDefaultNPC.Length > 0)
+            halamanNPC = new string[]
             {
-                halamanNPC = halamanDefaultNPC;
-                gambarNPC = gambarDefaultNPC;
-            }
-            else
-            {
-                halamanNPC = new string[]
-                {
-                    "Tidak ada teks NPC."
-                };
+                "Tidak ada teks NPC."
+            };
 
-                gambarNPC = null;
-            }
-
+            gambarNPC = null;
             halamanAktif = 0;
+        }
+
+        if (halamanAktif < 0)
+        {
+            halamanAktif = 0;
+        }
+
+        if (halamanAktif >= halamanNPC.Length)
+        {
+            halamanAktif = halamanNPC.Length - 1;
         }
 
         if (judulNPCText != null)
@@ -179,29 +341,11 @@ public class NPCWindowManager : MonoBehaviour
         }
     }
 
-    public void TutupNPCWindow()
+    private void GantiAnimasiNPC(string namaAnimasi)
     {
-        if (npcWindow != null)
+        if (npcAnimator != null && namaAnimasi != "")
         {
-            npcWindow.SetActive(false);
+            npcAnimator.CrossFade(namaAnimasi, transitionDuration);
         }
-
-        if (rightHandLaser != null)
-        {
-            rightHandLaser.SetActive(false);
-        }
-    }
-
-    [ContextMenu("Test Update NPC Halaman")]
-    public void TestUpdate()
-    {
-        string[] testHalaman = new string[]
-        {
-            "Halaman 1: Kamu bertemu dengan NPC.",
-            "Halaman 2: NPC memberikan petunjuk perjalanan.",
-            "Halaman 3: Lanjutkan perjalananmu."
-        };
-
-        UpdateNPCHalaman(testHalaman, gambarDefaultNPC);
     }
 }

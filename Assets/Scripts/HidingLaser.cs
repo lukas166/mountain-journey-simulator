@@ -3,20 +3,25 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals;
 
 public class HidingLaser : MonoBehaviour
 {
-    public GameObject questWindow;
-    public GameObject exitConfirmWindow;
-    public GameObject npcWindow;
+    [Header("Semua Window yang Membutuhkan Laser")]
+    public GameObject[] windows;
 
+    [Header("Komponen Laser")]
     public XRInteractorLineVisual lineVisual;
     public LineRenderer lineRenderer;
 
     void Update()
     {
-        bool questActive = questWindow != null && questWindow.activeSelf;
-        bool exitActive = exitConfirmWindow != null && exitConfirmWindow.activeSelf;
-        bool npcActive = npcWindow != null && npcWindow.activeSelf;
+        bool shouldShowLaser = false;
 
-        bool shouldShowLaser = questActive || exitActive || npcActive;
+        for (int i = 0; i < windows.Length; i++)
+        {
+            if (windows[i] != null && windows[i].activeInHierarchy)
+            {
+                shouldShowLaser = true;
+                break;
+            }
+        }
 
         if (lineVisual != null)
         {
