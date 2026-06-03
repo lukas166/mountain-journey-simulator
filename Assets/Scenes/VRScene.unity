@@ -401,7 +401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &24427849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +600,11 @@ MonoBehaviour:
     henti untuk menemanimu setiap hari. Sekarang, tarik napas dalam-dalam, lanjutkan
     perjalananmu, dan tetap semangat. Kamu pasti bisa!
   gambarNPC:
-  - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  - {fileID: 21300000, guid: eaf2396cb2da2584f80bf71df29637c2, type: 3}
+  - {fileID: 21300000, guid: f00b57398450d35468e770086ffb6021, type: 3}
+  - {fileID: 21300000, guid: 036fcc9de817faf4986b6fe5ca565780, type: 3}
+  - {fileID: 21300000, guid: 7bde01ad22bc5e54a9cc5280ea5e1faf, type: 3}
+  - {fileID: 21300000, guid: eaf2396cb2da2584f80bf71df29637c2, type: 3}
   barrierYangDihilangkan: {fileID: 971437050}
   hilangkanBarrierSaatTrigger: 1
 --- !u!1 &51552778
@@ -3522,8 +3526,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.3869934, y: 1.7489929}
+  m_SizeDelta: {x: -92.443, y: -116.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434276776
 MonoBehaviour:
@@ -3597,8 +3601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 87}
-  m_SizeDelta: {x: 500, y: 200}
+  m_AnchoredPosition: {x: 0, y: 69.3}
+  m_SizeDelta: {x: 561.9, y: 187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &450679374
 MonoBehaviour:
@@ -3753,7 +3757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &475209472
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3905,7 +3909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140.8, y: -94.2}
+  m_AnchoredPosition: {x: 197.8, y: -101.10005}
   m_SizeDelta: {x: 200, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487835094
@@ -6109,7 +6113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e62c92b091afd2a469c590a697ad0676, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -143.29091
+      value: -143.07907
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e62c92b091afd2a469c590a697ad0676, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7413,7 +7417,9 @@ MonoBehaviour:
 
     Coba hadapkan tubuh Anda
     ke belakang secara perlahan. Terimakasih sudah bermain!'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: b139aa71f3a0cbf47bbdee6fff24c6a0, type: 3}
+  - {fileID: 21300000, guid: b139aa71f3a0cbf47bbdee6fff24c6a0, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -7774,7 +7780,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161958167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7783,7 +7789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.5, y: -93.2}
+  m_AnchoredPosition: {x: -192.2, y: -97.6}
   m_SizeDelta: {x: 200, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161958169
@@ -8138,12 +8144,18 @@ MonoBehaviour:
 
     Jika sudah
     siap, lanjutkan perjalanan menuju pos berikutnya.'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 11c7edad49d5b4b468aa6bfd8e72dbee, type: 3}
+  - {fileID: 21300000, guid: bda9cfeef0367df4fb655b6153d9f406, type: 3}
+  - {fileID: 21300000, guid: 84dbeed943e40184da72760df3754351, type: 3}
+  - {fileID: 21300000, guid: 84dbeed943e40184da72760df3754351, type: 3}
+  - {fileID: 21300000, guid: 84dbeed943e40184da72760df3754351, type: 3}
+  - {fileID: 21300000, guid: 11c7edad49d5b4b468aa6bfd8e72dbee, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
   barrierParentUntukDihilangkan: {fileID: 1655249728}
-  hilangkanBarrierSaatTrigger: 0
+  hilangkanBarrierSaatTrigger: 1
   hancurkanSetelahTrigger: 1
 --- !u!4 &1223861825
 Transform:
@@ -8154,8 +8166,8 @@ Transform:
   m_GameObject: {fileID: 1223861822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
-  m_LocalPosition: {x: -70.04, y: 29.2, z: 172.215}
-  m_LocalScale: {x: 1, y: 10, z: 37.827}
+  m_LocalPosition: {x: -67.315, y: 29.29, z: 175.59}
+  m_LocalScale: {x: 2.13609, y: 13.431994, z: 50.809208}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -10746,11 +10758,16 @@ MonoBehaviour:
 
     Silakan mencoba dan
     silahkan lanjut ke area pos 1.'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 9c3a6381d4827a846aaf3bf044395e72, type: 3}
+  - {fileID: 21300000, guid: 128b58bc99abeb94abe85a4571071c9f, type: 3}
+  - {fileID: 21300000, guid: 128b58bc99abeb94abe85a4571071c9f, type: 3}
+  - {fileID: 21300000, guid: 642d1c8f81d4c724688a9a0e52bdad2b, type: 3}
+  - {fileID: 21300000, guid: df2323fd7f473c64da2594cbe7c35f26, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
-  barrierParentUntukDihilangkan: {fileID: 1655249728}
+  barrierParentUntukDihilangkan: {fileID: 1331641475}
   hilangkanBarrierSaatTrigger: 1
   hancurkanSetelahTrigger: 1
 --- !u!4 &1466241832
@@ -10933,7 +10950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e62c92b091afd2a469c590a697ad0676, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -143.33383
+      value: -143.122
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e62c92b091afd2a469c590a697ad0676, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11664,7 +11681,8 @@ MonoBehaviour:
     Untuk melanjutkan perjalanan kembali, Anda
     harus berbincang dengan Pemandu di pos istirahat yang ada di depan Anda. Semangat,
     sedikit lagi anda akan mencapai puncak gunung!'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 880da8d3e414e604081072bbecd2c691, type: 3}
   cubeVisualBarrier: {fileID: 632883955}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -11862,43 +11880,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -69.568146
+      value: -69.495
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.89647
+      value: 29.039
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 172.12181
+      value: 177.35371
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.57318956
+      value: 0.5739325
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.48766273
+      value: 0.4061286
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5966568
+      value: -0.60045075
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.27863863
+      value: 0.3809462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 63.069
+      value: 67.467
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -114.473
+      value: -97.642
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -35.422
+      value: -7.564
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7aee9efbae32e4448b58fe574a0b8fb0, type: 3}
       propertyPath: m_Name
@@ -12509,10 +12527,10 @@ MonoBehaviour:
 
     Tab Exit - Kembali ke Main Menu'
   gambarQuest:
-  - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  - {fileID: 21300000, guid: 4ca4d74c8d867c94588daad3d81a294b, type: 3}
   - {fileID: 21300000, guid: f711dc313b41ce544ae4c920365ab184, type: 3}
   - {fileID: 21300000, guid: 8580442321580c34a8f3ab0875d9c77e, type: 3}
-  - {fileID: 21300000, guid: 8580442321580c34a8f3ab0875d9c77e, type: 3}
+  - {fileID: 21300000, guid: 43a408c62db53914f8ea5e19c7d77952, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -12528,7 +12546,7 @@ Transform:
   m_GameObject: {fileID: 1716998883}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 9.65, z: -174.49}
+  m_LocalPosition: {x: -0.5, y: 9.65, z: -176.17}
   m_LocalScale: {x: 4.245869, y: 42.45869, z: 226.47466}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12709,7 +12727,10 @@ MonoBehaviour:
     Tekan
     tombol A berulang kali agar kamu bisa terus melompat ke atas.'
   - Puncak sudah di depan mata. Kamu pasti bisa mencapainya!
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 511e51fced73eb540bc80fef58b17043, type: 3}
+  - {fileID: 21300000, guid: 9d8bfc76d7ad354439c5d0334f065ce6, type: 3}
+  - {fileID: 21300000, guid: 511e51fced73eb540bc80fef58b17043, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -13406,8 +13427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestWindowFollowHead
   headTransform: {fileID: 1989161794}
-  distance: 10
-  downwardOffset: -1
+  distance: 5
+  downwardOffset: 0
   followSpeed: 20
 --- !u!114 &1783563598
 MonoBehaviour:
@@ -13483,7 +13504,7 @@ RectTransform:
   m_GameObject: {fileID: 1783563596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.15050201, y: 0.15050201, z: 0.15050201}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 434276775}
@@ -13587,7 +13608,8 @@ MonoBehaviour:
 
     Untuk membuka area pos,
     anda harus mencari item quest terlebih dahulu Silakan ambil jalur quest.'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 4c62eb23e3587f94aaba9ffea6ee0215, type: 3}
   cubeVisualBarrier: {fileID: 146816769}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -13667,7 +13689,8 @@ MonoBehaviour:
     Untuk membuka area
     pos berikutnya, anda harus mencari item quest lagi nih. Silakan ambil jalur quest
     lagi!'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: 66e9e2a920e156a4a926cab0ff61b74b, type: 3}
   cubeVisualBarrier: {fileID: 1717867575}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -14366,6 +14389,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b82c41d3a4126d5449c3168afe5f657c, type: 3}
   - {fileID: 21300000, guid: 5f1f036ad0870454eacc7105749ba3ab, type: 3}
   - {fileID: 21300000, guid: a67e853bcc0f94746aeebd3800a6ab44, type: 3}
+  aktifkanGlobalAudioToggle: 1
+  audioMenuIndex: 2
+  audioOnIcon: {fileID: 21300000, guid: a67e853bcc0f94746aeebd3800a6ab44, type: 3}
+  audioMutedIcon: {fileID: 21300000, guid: 46bb7a47a31518f439d79cc12038d942, type: 3}
+  normalVolume: 1
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedColor: {r: 0.55602527, g: 0.63378525, b: 0.990566, a: 0.49803922}
   OnPartSelected:
@@ -15585,7 +15613,8 @@ MonoBehaviour:
 
     Untuk melanjutkan perjalanan, anda harus berbincang
     dengan Pemandu pada pos perkemahan di depan anda.'
-  gambarQuest: []
+  gambarQuest:
+  - {fileID: 21300000, guid: e3fe2eb5e7a0d604caea94ac7375a5ed, type: 3}
   cubeVisualBarrier: {fileID: 1028044363}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -15751,7 +15780,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2110879537
 Transform:
   m_ObjectHideFlags: 0
@@ -15797,7 +15826,10 @@ MonoBehaviour:
     perlahan, tenangkan pikiranmu, dan bersiaplah melanjutkan perjalanan. Puncak
     sudah semakin dekat, semangatt!
   gambarNPC:
-  - {fileID: 21300000, guid: e883441ca7da7354fac787a4a20cc8a3, type: 3}
+  - {fileID: 21300000, guid: 60f72cf00b8817c4896456c51c03f45a, type: 3}
+  - {fileID: 21300000, guid: 7f9749744d1aa484ab7fd9bcbd610d5c, type: 3}
+  - {fileID: 21300000, guid: b1d5cd23192e3844aba917bfc6406ed1, type: 3}
+  - {fileID: 21300000, guid: e94bcb48456ec87499e3b9a6c67eee96, type: 3}
   barrierYangDihilangkan: {fileID: 746525007}
   hilangkanBarrierSaatTrigger: 1
 --- !u!135 &2110879539
@@ -15850,7 +15882,7 @@ Transform:
   m_GameObject: {fileID: 2114056574}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6328986, y: 8.8, z: -227.53}
+  m_LocalPosition: {x: 4.381, y: 8.755, z: -219.433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
