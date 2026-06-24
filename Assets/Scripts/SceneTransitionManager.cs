@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class SceneTransitionManager : MonoBehaviour
 {
     public FadeScreen fadeScreen;
@@ -38,6 +42,7 @@ public class SceneTransitionManager : MonoBehaviour
     IEnumerator GoToSceneAsyncRoutine(int sceneIndex)
     {
         fadeScreen.FadeOut();
+
         //Launch the new scene
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         operation.allowSceneActivation = false;
@@ -51,4 +56,24 @@ public class SceneTransitionManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
     }
-}
+
+    public void QuitGame()
+    {
+        StartCoroutine(QuitGameRoutine());
+    }
+
+    IEnumerator QuitGameRoutine()
+    {
+        if (fadeScreen != null)
+        {
+            fadeScreen.FadeOut();
+            yield return new WaitForSeconds(fadeScreen.fadeDuration);
+        }
+
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+}   
