@@ -11670,12 +11670,16 @@ MonoBehaviour:
 
     Silakan mencoba dan
     silahkan lanjut ke area pos 1.'
+  - Jika anda melihat indikator merah di kanan atas seperti pada gambar, artinya
+    anda sedang stamina anda telah habis. Anda bisa berhenti sejenak atau nonaktifkan
+    mode lari.
   gambarQuest:
   - {fileID: 21300000, guid: 9c3a6381d4827a846aaf3bf044395e72, type: 3}
   - {fileID: 21300000, guid: 128b58bc99abeb94abe85a4571071c9f, type: 3}
   - {fileID: 21300000, guid: 128b58bc99abeb94abe85a4571071c9f, type: 3}
   - {fileID: 21300000, guid: 642d1c8f81d4c724688a9a0e52bdad2b, type: 3}
   - {fileID: 21300000, guid: df2323fd7f473c64da2594cbe7c35f26, type: 3}
+  - {fileID: 21300000, guid: 525d9a93512a79d47878377c2c69db24, type: 3}
   cubeVisualBarrier: {fileID: 0}
   matikanCubeVisualDiAwal: 1
   aktifkanCubeVisualSaatTrigger: 1
@@ -13899,6 +13903,10 @@ MonoBehaviour:
   rightHandLaser: {fileID: 0}
   halamanDefaultQuest: []
   gambarDefaultQuest: []
+  isLinearFog: 0
+  targetFogDensity: 0.005
+  targetFogEndDistance: 300
+  durasiTransisi: 3
 --- !u!114 &1726363789
 MonoBehaviour:
   m_ObjectHideFlags: 0

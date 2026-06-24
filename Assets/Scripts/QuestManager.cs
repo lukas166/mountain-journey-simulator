@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.Collections; // Wajib ditambahkan untuk menggunakan Coroutine
 
 public class QuestManager : MonoBehaviour
 {
@@ -29,9 +30,16 @@ public class QuestManager : MonoBehaviour
     [Header("Gambar Default Quest")]
     public Sprite[] gambarDefaultQuest;
 
+    [Header("Pengaturan Akhir Game (Fog)")]
+    public bool isLinearFog = false;
+    public float targetFogDensity = 0.005f; 
+    public float targetFogEndDistance = 300f; 
+    public float durasiTransisi = 3f;
+
     private string[] halamanQuest;
     private Sprite[] gambarQuest;
     private int halamanAktif = 0;
+    private bool fogSudahTerpicu = false;
 
     public void UpdateQuestHalaman(string[] halamanBaru)
     {
@@ -172,6 +180,48 @@ public class QuestManager : MonoBehaviour
             rightHandLaser.SetActive(false);
         }
     }
+
+    // --- FITUR TRIGGER FOG UNTUK AKHIR GAME ---
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Mengecek apakah yang menyentuh trigger adalah Player dan trigger belum pernah dipicu
+        if (other.CompareTag("Player") && !fogSudahTerpicu)
+        {
+            fogSudahTerpicu = true;
+            StartCoroutine(UbahFogSecaraPerlahan());
+        }
+    }
+
+    private IEnumerator UbahFogSecaraPerlahan()
+    {
+        float waktuBerjalan = 0f;
+
+        if (isLinearFog)
+        {
+            float startEndDistance = RenderSettings.fogEndDistance;
+            while (waktuBerjalan < durasiTransisi)
+            {
+                RenderSettings.fogEndDistance = Mathf.Lerp(startEndDistance, targetFogEndDistance, waktuBerjalan / durasiTransisi);
+                waktuBerjalan += Time.deltaTime;
+                yield return null;
+            }
+            RenderSettings.fogEndDistance = targetFogEndDistance;
+        }
+        else 
+        {
+            float startDensity = RenderSettings.fogDensity;
+            while (waktuBerjalan < durasiTransisi)
+            {
+                RenderSettings.fogDensity = Mathf.Lerp(startDensity, targetFogDensity, waktuBerjalan / durasiTransisi);
+                waktuBerjalan += Time.deltaTime;
+                yield return null;
+            }
+            RenderSettings.fogDensity = targetFogDensity;
+        }
+    }
+
+    // ------------------------------------------
 
     [ContextMenu("Test Update Quest Halaman")]
     public void TestUpdate()
