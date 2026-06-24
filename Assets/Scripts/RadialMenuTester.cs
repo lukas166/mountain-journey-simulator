@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Collections;
 public class RadialMenuTester : MonoBehaviour
 {
     [Header("Masukkan UI Quest Window di sini")]
@@ -96,14 +98,60 @@ public class RadialMenuTester : MonoBehaviour
 
     public void KeluarGame()
     {
-        Debug.Log("Game keluar.");
+        StartCoroutine(KeluarGameRoutine());
+    }
 
-        #if UNITY_EDITOR
-            // Menghentikan mode Play di dalam Unity Editor
-            UnityEditor.EditorApplication.isPlaying = false;
-        #else
-            // Menutup aplikasi final (Build)
-            Application.Quit();
-        #endif
+    IEnumerator KeluarGameRoutine()
+    {
+        Debug.Log("Kembali ke Menu Scene dengan fade.");
+
+        yield return StartCoroutine(FadeOutOtomatis());
+
+        int sceneSekarang = SceneManager.GetActiveScene().buildIndex;
+        int sceneSebelumnya = sceneSekarang - 1;
+
+        if (sceneSebelumnya >= 0)
+        {
+            SceneManager.LoadScene(sceneSebelumnya);
+        }
+        else
+        {
+            Debug.LogWarning("Tidak ada scene sebelumnya.");
+        }
+    }
+
+    IEnumerator FadeOutOtomatis()
+    {
+        GameObject canvasObject = new GameObject("Auto Fade Canvas");
+        Canvas canvas = canvasObject.AddComponent<Canvas>();
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.sortingOrder = 999;
+
+        CanvasGroup canvasGroup = canvasObject.AddComponent<CanvasGroup>();
+        canvasGroup.alpha = 0f;
+
+        GameObject imageObject = new GameObject("Fade Image");
+        imageObject.transform.SetParent(canvasObject.transform, false);
+
+        Image image = imageObject.AddComponent<Image>();
+        image.color = Color.black;
+
+        RectTransform rectTransform = imageObject.GetComponent<RectTransform>();
+        rectTransform.anchorMin = Vector2.zero;
+        rectTransform.anchorMax = Vector2.one;
+        rectTransform.offsetMin = Vector2.zero;
+        rectTransform.offsetMax = Vector2.zero;
+
+        float durasiFade = 1f;
+        float timer = 0f;
+
+        while (timer < durasiFade)
+        {
+            timer += Time.deltaTime;
+            canvasGroup.alpha = timer / durasiFade;
+            yield return null;
+        }
+
+        canvasGroup.alpha = 1f;
     }
 }
